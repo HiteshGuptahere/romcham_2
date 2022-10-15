@@ -1,15 +1,20 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
+  cilBarChart,
   cilBell,
   cilCalculator,
+  cilCalendar,
+  cilChartLine,
   cilChartPie,
   cilCursor,
   cilDescription,
   cilDrop,
+  cilHome,
   cilNotes,
   cilPencil,
   cilPuzzle,
+  cilSettings,
   cilSpeedometer,
   cilStar,
 } from '@coreui/icons'
@@ -24,7 +29,7 @@ const _nav = [
     component: CNavItem,
     name: 'Home',
     to: '/',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilHome} customClassName="nav-icon" />,
     // badge: {
     //   color: 'info',
     //   text: 'NEW',
@@ -34,25 +39,25 @@ const _nav = [
     component: CNavItem,
     name: 'Feeds',
     to: '/page/feeds',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilChartLine} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Events',
     to: '/page/events',
-    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilCalendar} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Polls',
     to: '/page/polls',
-    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilBarChart} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Analytics',
     to: '/page/analytics',
-    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,
@@ -62,7 +67,7 @@ const _nav = [
     component: CNavItem,
     name: 'Settings',
     to: '/page/settings',
-    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
   },
   // {
   //   component: CNavGroup,

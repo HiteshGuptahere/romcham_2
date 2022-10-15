@@ -105,13 +105,9 @@
 import React from 'react'
 import Logo from '../assets/img/Logo1.png'
 import styles from './navbar.module.css'
+import { Link } from 'react-router-dom'
+
 const NavBar = () => {
-  const handleLogin = () => {
-    window.open('http://localhost:3000', '_self')
-  }
-  const handleRegister = () => {
-    window.open('http://localhost:3000/register', '_self')
-  }
   return (
     <div className="sticky-top">
       <nav
@@ -136,72 +132,70 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className={`navbar-nav me-auto mb-2 mb-lg-0 ${styles.liAlign}`}>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to={'/'}>
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" aria-current="page" to={'/page/vision'}>
                   vision
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" aria-current="page" to={'/page/benifits'}>
                   benifits
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" aria-current="page" to={'/page/membership'}>
                   Membership
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/contact">
+                <Link className="nav-link" aria-current="page" to={'/page/benifits'}>
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/feeds">
+                <Link className="nav-link" aria-current="page" to={'/page/feeds'}>
                   feeds
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/polls">
+                <Link className="nav-link" aria-current="page" to={'/page/polls'}>
                   polls
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/events">
+                <Link className="nav-link" aria-current="page" to={'/page/events'}>
                   events
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/notice">
+                <Link className="nav-link" aria-current="page" to={'/page/notice'}>
                   notice
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#/page/commitee">
-                  Commitee
-                </a>
+                <Link className="nav-link" aria-current="page" to={'/page/notice'}>
+                  commitee
+                </Link>
               </li>
             </ul>
             <form className="d-flex">
-              <button
-                className={`btn btn-outline-success ${styles.loginNav}`}
-                type="button"
-                onClick={() => handleLogin()}
-                style={{ marginRight: '1rem' }}
+              <Link
+                style={{ textDecoration: 'none', color: 'white', marginRight: '1rem' }}
+                to={'/login'}
               >
-                login
-              </button>
-              <button
-                className={`btn btn-outline-success ${styles.navReg}`}
-                type="button"
-                onClick={() => handleRegister()}
-              >
-                Register
-              </button>
+                <button className={`btn btn-outline-success ${styles.loginNav}`} type="button">
+                  login
+                </button>
+              </Link>
+              <Link style={{ textDecoration: 'none', color: 'white' }} to={'/register'}>
+                <button className={`btn btn-outline-success ${styles.navReg}`} type="button">
+                  Register
+                </button>
+              </Link>
             </form>
           </div>
         </div>

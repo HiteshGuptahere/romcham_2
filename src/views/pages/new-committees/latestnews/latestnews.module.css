@@ -1,0 +1,42 @@
+.eventHead {
+
+    text-transform: capitalize;
+    
+}
+
+.card {
+    
+    border-radius: 0.5rem;
+}
+
+
+.fontawesome {
+
+    color: red;
+}
+.cardResponsive {
+
+    padding:0rem;
+}
+
+ @media only screen and (min-width: 280px) and (max-width : 480px) {
+    .cardResponsive {
+      
+        padding:0rem;
+    }
+  }
+
+
+.card1 {
+
+    border-radius: 0.5rem;
+    height: 22rem;
+}
+
+
+
+.picHeight {
+
+    height: 14rem;
+}
+

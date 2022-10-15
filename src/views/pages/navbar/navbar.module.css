@@ -1,0 +1,37 @@
+.liAlign  {
+
+    margin-right: 2rem !important;
+ 
+}
+
+.liAlign li {
+
+    padding: 0.5rem 1rem;
+    text-transform: capitalize;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+
+.loginNav {
+
+    border: none !important;
+    text-transform: capitalize !important;
+    color: black !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+}
+
+.navReg {
+
+    text-transform: uppercase !important;
+    border-radius: 2rem !important;
+    background-image: linear-gradient(to right, #F69032 , #FDCB19) !important;
+    border: none !important;
+    color: #002146 !important;
+    height: 3rem !important;
+    font-weight: 600 !important;
+    width: 10rem !important;
+    font-size: 0.7rem !important;
+    margin: 0rem 0rem 0rem 2rem;
+}

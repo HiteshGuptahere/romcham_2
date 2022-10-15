@@ -632,8 +632,9 @@ const Ui = () => {
               className={` ${styles.greenBannerAlign}`}
               style={{
                 background: '#7FA53D',
-                maxHeight: '30vh',
-                width: 'fit-content',
+                maxHeight: '37vh',
+                width: '100%',
+                position: 'absolute',
               }}
             />
           </div>

@@ -8,7 +8,9 @@
   font-size: 0.7rem;
   font-weight: 600;
 }
-
+a {
+  cursor: pointer;
+}
 .loginNav {
   text-transform: uppercase;
   border-radius: 2rem;

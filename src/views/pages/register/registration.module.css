@@ -1,0 +1,197 @@
+.loginPosition {
+  position: relative;
+  height: 65rem;
+}
+
+.backgroundHr {
+  background-image: url('./assets/pic9.png');
+}
+.bannerHeadAlign {
+  position: absolute;
+  top: 9rem;
+  left: 13rem;
+}
+.bannerHead {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 100;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+}
+
+.loginCard {
+  width: 40%;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.loginHead h5 {
+  text-align: center;
+  text-transform: capitalize;
+  color: #4866a7;
+  font-weight: 700;
+}
+
+.loginInputs {
+  height: 50px;
+  display: flex;
+  border: 1px solid #4e6fb7;
+  border-radius: 5px;
+  align-items: center;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4462a5;
+}
+
+.loginIcon {
+  padding: 8px 16px;
+  color: #4462a5;
+}
+
+.loginInputs input {
+  border: 0px solid #c1c1c1;
+  width: 100%;
+  outline: none;
+  height: 30px;
+  font-size: 18px;
+}
+
+.loginForgot a {
+  text-decoration: none;
+}
+
+.loginBtn {
+  text-transform: uppercase;
+  border-radius: 2rem;
+  background-image: linear-gradient(to right, #f69032, #fdcb19);
+  border: none;
+  color: #002146;
+  height: 3rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.greenBannerText {
+  position: absolute;
+  display: flex;
+  left: 17rem;
+  top: 6.5rem;
+}
+
+.greenBannerText h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.3rem;
+}
+
+.greenBannerText h5 {
+  text-transform: capitalize;
+  color: white;
+}
+
+.greenBtn {
+  width: 15rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background: white;
+  color: #7fa53d;
+  border: none;
+  text-transform: uppercase;
+}
+.greenBtnAlign {
+  margin-left: 7rem;
+}
+
+.memberHeight {
+  height: 100%;
+  margin-top: -13rem !important;
+}
+
+.orangeBanner {
+  background: #ddae24;
+  border-top-left-radius: 50px;
+  height: 15rem;
+}
+.whiteBanner {
+  position: absolute;
+  top: 14%;
+  left: 0;
+  /* transform: translate(0%,0%); */
+  height: 13rem;
+  width: 90% !important;
+}
+
+.greenBanner {
+  background: #7fa53d;
+  border-top-left-radius: 50px;
+  height: 15rem;
+  /* margin: 0rem 12rem; */
+  padding: 2rem;
+}
+
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+  .whiteBanner {
+    width: 90% !important;
+    height: 17.3rem;
+    border-top-right-radius: 25px;
+  }
+  .orangeBanner {
+    height: 20rem;
+    border-top-left-radius: 40px;
+  }
+
+  .memberHeight {
+    height: 20rem;
+    margin-top: -4rem;
+  }
+
+  .loginCard {
+    width: 100%;
+    top: 100%;
+  }
+
+  .loginForgot {
+    display: block !important;
+  }
+
+  .memberHeight {
+    margin-top: 0rem !important;
+  }
+
+  .bannerHeadAlign {
+    top: 4rem;
+    left: 1rem;
+  }
+  .bannerHead {
+    font-size: 0.8rem !important;
+    letter-spacing: 0.1rem;
+  }
+
+  .greenBanner {
+    margin: 0rem 2rem !important;
+  }
+
+  .greenBannerText {
+    display: block;
+    left: 4rem;
+    top: 1.5rem;
+  }
+
+  .greenBannerText h1 {
+    font-size: 1.3rem;
+  }
+
+  .greenBtnAlign {
+    margin: 2rem 0rem 0rem 0rem;
+  }
+
+  .loginPosition {
+    height: 48rem;
+    position: absolute;
+  }
+}
