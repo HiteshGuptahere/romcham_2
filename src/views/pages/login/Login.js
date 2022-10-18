@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaUserAlt, FaLockOpen, FaEye } from 'react-icons/fa'
 import mask from './assets/mask.png'
 import styles from './login.module.css'
@@ -7,8 +7,45 @@ import pic9 from './assets/pic9.png'
 import NavBar from '../../../components/NavBar'
 import Footer from '../footer/Footer'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import axios from 'axios'
+import { createBrowserHistory } from 'history'
 
 const Login1 = () => {
+  let history = createBrowserHistory()
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  })
+  const [msg, setMsg] = useState({
+    message: '',
+    status: '',
+  })
+  const handleLogin = async (data) => {
+    if (!user.email) {
+      setMsg({
+        message: 'Please enter Email Fields',
+        status: 'error',
+      })
+    }
+    if (!user.password) {
+      setMsg({
+        message: 'Please enter Password Fields',
+        status: 'error',
+      })
+    }
+    await axios
+      .post(process.env.REACT_APP_API_KEY + 'user/login', data)
+      .then(function (response) {
+        // handle success
+        console.log(response)
+        history.push('/home')
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error)
+      })
+  }
   return (
     <>
       <NavBar />
@@ -31,14 +68,24 @@ const Login1 = () => {
                       <span className={`${styles.loginIcon}`}>
                         <FaUserAlt />
                       </span>
-                      <input type="text" placeholder="| User Id" />
+                      <input
+                        type="email"
+                        placeholder="| User Id"
+                        value={user.email}
+                        onChange={(el) => setUser({ ...user, email: el.target.value })}
+                      />
                     </div>
 
                     <div className={`mt-4 ${styles.loginInputs}`}>
                       <span className={`${styles.loginIcon}`}>
                         <FaLockOpen />
                       </span>
-                      <input type="password" placeholder="| Password" />
+                      <input
+                        type="password"
+                        value={user.password}
+                        onChange={(el) => setUser({ ...user, password: el.target.value })}
+                        placeholder="| Password"
+                      />
                       <span className={`${styles.loginIcon}`}>
                         <FaEye />
                       </span>
@@ -56,10 +103,22 @@ const Login1 = () => {
                         </p>
                       </div>
                     </div>
+                    {msg.status === 'error' ? (
+                      <div className={`d-flex justify-content-between mt-4 ${styles.loginForgot}`}>
+                        <div>
+                          <p className="text-danger">{msg.message}</p>
+                        </div>
+                      </div>
+                    ) : null}
+
                     <div className="mt-4">
-                      <Link to={'/page'} className={`btn btn-primary mb-4 ${styles.loginBtn}`}>
-                        login
-                      </Link>
+                      <Button
+                        className={`btn btn-primary mb-4 ${styles.loginBtn}`}
+                        variant="primary"
+                        onClick={() => handleLogin(user)}
+                      >
+                        Sign In
+                      </Button>
                     </div>
                   </form>
                 </div>
