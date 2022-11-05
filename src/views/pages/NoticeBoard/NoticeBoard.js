@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 const NoticeBoard = () => {
   return (
     <>
-      <div className={`card mt-3 ${styles.card}`}>
+      <div className={`card mt-3 ${styles.card}`} id="noticeboard" style={{ width: 'fit-content' }}>
         <div className={`card-body`}>
           <div className="d-flex justify-content-between mt-3">
             <div className="d-flex">

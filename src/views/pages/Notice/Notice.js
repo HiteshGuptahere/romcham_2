@@ -1,7 +1,7 @@
-import React from "react";
-import "./Notice.css";
-import { AiOutlineFileAdd } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import React from 'react'
+import './Notice.css'
+import { AiOutlineFileAdd } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 function Notice() {
   return (
@@ -16,10 +16,10 @@ function Notice() {
           <div
             className="card-header"
             style={{
-              height: "100vh",
-              width: "300px",
-              marginLeft: "120px",
-              borderTopLeftRadius: "50px",
+              height: '100vh',
+              width: '300px',
+              marginLeft: '120px',
+              borderTopLeftRadius: '50px',
             }}
           >
             <div className="title">
@@ -31,11 +31,11 @@ function Notice() {
             <div
               className="card-header"
               style={{
-                height: "160px",
-                width: "260px",
-                position: "relative",
-                backgroundColor: "white",
-                borderRadius: "10px",
+                height: '160px',
+                width: '260px',
+                position: 'relative',
+                backgroundColor: 'white',
+                borderRadius: '10px',
               }}
             >
               <div className="container">
@@ -54,12 +54,12 @@ function Notice() {
                   community.
                 </p>
               </div>
-              <div style={{marginTop:"6rem"}}>
+              <div style={{ marginTop: '6rem' }}>
                 {/* CREATE NOTICE */}
                 {/* <Link  className="btn btn-success btn-lg" to="/user/PopUp"><b>CREATE NOTICE</b></Link> */}
                 <Link
                   className={`btn btn-primary`}
-                  style={{ width: "9.8rem" , borderRadius:"100px",background:"#2EB67D"}}
+                  style={{ width: '9.8rem', borderRadius: '100px', background: '#2EB67D' }}
                   to="/user/PopUp"
                 >
                   Create Notice
@@ -78,10 +78,10 @@ function Notice() {
         view details
       </Link> */}
     </>
-  );
+  )
 }
 
-export default Notice;
+export default Notice
 // import React from 'react';
 // import './Notice.css';
 // import { AiOutlineFileAdd } from 'react-icons/ai';

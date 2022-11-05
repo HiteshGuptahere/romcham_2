@@ -48,7 +48,7 @@ const Feeds = () => {
                   <button className={`btn btn-warning ${styles.createBtn}`}>post</button>
                 </div>
 
-                <div style={{ marginTop: '5rem' }} className={`${styles.fauser}`}>
+                <div style={{ marginTop: '2rem' }} className={`${styles.fauser}`}>
                   <FaUserPlus className={`${styles.fauserplus}`} />
                 </div>
               </div>
@@ -71,7 +71,7 @@ const Feeds = () => {
                   <button className={`btn btn-warning ${styles.addmember}`}>add people</button>
                 </div>
 
-                <div style={{ marginTop: '5rem' }} className={`${styles.fauser}`}>
+                <div style={{ marginTop: '2rem' }} className={`${styles.fauser}`}>
                   <FaUserPlus className={`${styles.fauserplus}`} />
                 </div>
               </div>
