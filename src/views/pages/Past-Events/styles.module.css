@@ -1,0 +1,56 @@
+.card {
+    background-color: #EDF8F4;
+     box-shadow: none;
+}
+
+
+.btn {
+
+    background: #4E6EB7;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 35px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.eventLabel {
+
+    text-transform: capitalize;
+    color: #cfcfd3;
+}
+
+
+.eventImg {
+
+    border: 1px solid #dbdbdf;
+    border-width: 0.2rem;
+    border-style: dashed;
+    position: relative;
+    height: 12rem;
+    color: #cfcfd3;
+
+}
+
+
+.eventLabelDetails {
+
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+
+
+.upImg {
+
+    position: absolute;
+    left: 18rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+/* input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */

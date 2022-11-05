@@ -1,0 +1,70 @@
+.footer-button{
+    text-align: right;
+  }
+  .footer-button button{
+    width: 230px;
+    height: 55px;
+    left: 1277px;
+    top: 966px;
+    background: #4E6FB7;
+    border-radius: 100px;
+  }
+.cancel-icon{
+    text-align: right;
+    margin-top: -50px;
+    font-size: 20px;
+}
+.forms label{
+    height: 17px;
+    left: 435px;
+    top: 362px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #797979;
+}
+.title{
+  color: #4E6FB7;
+}
+.forms select{
+/* left: 449px; */
+/* top: 404px; */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+/* line-height: 17px; */
+  color: #000000;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+.forms input{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+/* line-height: 17px; */
+  color: #000000;
+  opacity: 0.8; 
+  border-radius: 10px;
+}
+.forms textarea{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+/* line-height: 17px; */
+  color: #000000;
+  opacity: 0.8; 
+  border-radius: 10px;
+}
+
+
+.btn-noticeBoard {
+
+  background-color: rgb(78, 111, 183);
+  border-radius: 2rem;    
+  width: 8rem;
+}
