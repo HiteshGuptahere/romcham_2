@@ -25,7 +25,6 @@
 
 //   const [ittems, setItems] = useState([])
 //   const [invoiceRefId, setInvoiceRefId] = useState('')
-//   console.log('items is', ittems)
 //   const loginMail = localStorage.getItem('email')
 //   useEffect(() => {
 //     const getUserDetails = async () => {
@@ -54,7 +53,6 @@
 //               })
 //               setInvoiceRefId(response.data[i].invoiceRefId)
 //             }
-//             console.log('babla', invoiceRefId)
 //             setItems(sample)
 //             // }
 //             // const listItems = response.json();
@@ -121,7 +119,6 @@
 //     // 	},
 //     // },
 //   ]
-//   console.log('list of item', ittems)
 //   const customFunction = (cellContent, row) => {
 //     return (
 //       <h5>
@@ -137,7 +134,6 @@
 //               pathname: '/merchant/deposits-to-merchant',
 //               state: { invoiceId: row.id },
 //             })
-//             console.log('sent email', row.id)
 //           }}
 //         >
 //           view

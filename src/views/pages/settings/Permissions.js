@@ -23,7 +23,7 @@ function Permissions() {
                 <h6 className="text">Commitee information</h6>
                 <p>Lorem ipsum dollor sit amet</p>
                 <div className="button">
-                  <button type="button" class="btn btn-light">
+                  <button type="button" className="btn btn-light">
                     Complite Your Profile
                   </button>
                 </div>
@@ -64,7 +64,7 @@ function Permissions() {
         </div>
         <div className="col-8">
           <div className="card-header" style={{ height: '400px', width: '900px' }}>
-            <table class="table">
+            <table className="table">
               <thead>
                 <th scope="col">
                   Who can join my Community?

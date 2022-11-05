@@ -23,7 +23,7 @@ function Manager() {
                 <h6 className="text">Commitee information</h6>
                 <p>Lorem ipsum dollor sit amet</p>
                 <div className="button">
-                  <button type="button" class="btn btn-light">
+                  <button type="button" className="btn btn-light">
                     Complite Your Profile
                   </button>
                 </div>
@@ -71,10 +71,10 @@ function Manager() {
               Can post the community, change community settings and add/remove pepole.
             </p>
             <form>
-              <div class="row">
-                <div class="col-8">
+              <div className="row">
+                <div className="col-8">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="form-label"
                     style={{ color: '#797979', fontFamily: 'sans-serif' }}
                   >
@@ -88,7 +88,7 @@ function Manager() {
                     name="email"
                   />
                 </div>
-                <div class="col-4">
+                <div className="col-4">
                   <button
                     type="button"
                     className="btn btn-primary btn-lg"

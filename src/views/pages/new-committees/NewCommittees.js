@@ -34,9 +34,7 @@ const NewCommittees = () => {
         // for (let i = 0; i < response.data.length; i++) {
         //   sample.push(response.data[i].user)
         // }
-        // console.log(response.data?.upcomingEvents, 'data')
         setPost(sample)
-        console.log(response.data.committeesList, 'datacomitee')
       })
       .catch((e) => {
         console.log(e)
@@ -45,7 +43,6 @@ const NewCommittees = () => {
   useEffect(() => {
     getApiCall()
   })
-  //   console.log(post, 'data12345')
   return (
     <>
       <NavBar />

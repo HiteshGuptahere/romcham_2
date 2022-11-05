@@ -15,7 +15,7 @@
 //           >
 //             <form>
 //               <div className="mb-3 mt-3">
-//                 <label for="email" className="form-label">
+//                 <label htmlFor="email" className="form-label">
 //                   Name Of Community
 //                 </label>
 //                 <input
@@ -32,20 +32,20 @@
 //                     width="30"
 //                     height="30"
 //                     fill="currentColor"
-//                     class="bi bi-person-plus-fill"
+//                     className="bi bi-person-plus-fill"
 //                     viewBox="0 0 16 16"
 //                   >
 //                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
 //                     <path
-//                       fill-rule="evenodd"
+//                       fillRule="evenodd"
 //                       d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
 //                     />
 //                   </svg>
 //                   <b className="title">ADD COMMITEE LOGO</b>
 //                 </div>
-//                 <label for="comment">Description</label>
+//                 <label htmlFor="comment">Description</label>
 //                 <textarea
-//                   class="form-control"
+//                   className="form-control"
 //                   rows="5"
 //                   id="comment"
 //                   name="text"
@@ -96,7 +96,7 @@ function UserDashboard() {
                 <h6 className="text">Commitee information</h6>
                 <p>Lorem ipsum dollor sit amet</p>
                 <div className="button">
-                  <button type="button" class="btn btn-light">
+                  <button type="button" className="btn btn-light">
                     Complite Your Profile
                   </button>
                 </div>
@@ -139,7 +139,7 @@ function UserDashboard() {
           <div className="card-header" style={{ height: '400px', width: '900px' }}>
             <form>
               <div className="mb-3 mt-3">
-                <label for="email" className="form-label">
+                <label htmlFor="email" className="form-label">
                   Name Of Community
                 </label>
                 <input
@@ -156,20 +156,20 @@ function UserDashboard() {
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-person-plus-fill"
+                    className="bi bi-person-plus-fill"
                     viewBox="0 0 16 16"
                   >
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
                     />
                   </svg>
                   <b className="title">ADD COMMITEE LOGO</b>
                 </div>
-                <label for="comment">Description</label>
+                <label htmlFor="comment">Description</label>
                 <textarea
-                  class="form-control"
+                  className="form-control"
                   rows="5"
                   id="comment"
                   name="text"

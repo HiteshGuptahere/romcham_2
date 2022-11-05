@@ -40,7 +40,7 @@ const Ui = () => {
   }
   const getApiCall = async () => {
     await axios
-      .get(' http://134.209.222.109:3000/user/get-homepage-list', {
+      .get(' http://134.209.222.109:3000/user/fillRule=', {
         headers: { 'Content-Type': 'application/json' },
         Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmdAZ21haWwuY29tIiwiaXNVc2VyIjp0cnVlLCJpYXQiOjE2NjYxNzc2MDIsImV4cCI6MTY2NjI2NDAwMn0.WJ-5g_xSpc3DHpDaKSeaSlSnIU65__HfizsDiuDGKz4`,
         // withCredentials: true,
@@ -50,12 +50,8 @@ const Ui = () => {
         // for (let i = 0; i < response.data.length; i++) {
         //   sample.push(response.data[i].user)
         // }
-        console.log(response.data, 'datahome')
-        // console.log(response.data?.upcomingEvents, 'data')
         setPost(response.data?.membership)
         setNews(response.data?.news)
-        console.log(post)
-        console.log(news)
       })
       .catch((e) => {
         console.log(e)
@@ -64,8 +60,7 @@ const Ui = () => {
 
   useEffect(() => {
     getApiCall()
-  }, [post])
-  console.log(post, 'data1234567')
+  })
   return (
     <>
       <div className="servicebackground">
@@ -200,7 +195,7 @@ const Ui = () => {
               news.map((el) => {
                 return (
                   <>
-                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <div key={el.id} className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                       <div className={`card mt-2 shadow ${styles.card1}`}>
                         <div className="card-body">
                           <img

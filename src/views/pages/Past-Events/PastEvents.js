@@ -31,8 +31,6 @@ const PastEvents = () => {
   //   }, [])
 
   //   if (!post) return null
-  //   console.log(post)
-  //   console.log(post?.pastEvents)
 
   const handleChange = (value) => {
     setPost(value)
@@ -54,8 +52,6 @@ const PastEvents = () => {
         for (let i = 0; i < response.data.length; i++) {
           sample.push(response.data[i].user)
         }
-        console.log(response.data, 'data')
-        console.log(response.data?.userlist, 'data')
         setPost(response.data?.userlist)
       })
   }, [])
@@ -63,17 +59,25 @@ const PastEvents = () => {
   return (
     <>
       <div>
-        <div>
-          <h5
-            className={`form-label ${styles.eventLabel}`}
-            style={{ color: 'black', fontWeight: '500' }}
-          >
-            Event Details
-          </h5>
+        <div className="row">
+          <div className="col">
+            <h5
+              className={`form-label ${styles.eventLabel}`}
+              style={{ color: 'black', fontWeight: '500' }}
+            >
+              Event Details
+            </h5>
+          </div>
+          <div className="col text-end">
+            <Link to="/page/events" style={{ textDecoration: 'none' }}>
+              <Button variant="contained" size="small">
+                Back
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {post?.map((item, index) => {
-          console.log(item, 'data123')
           return (
             <div key={index} className={`card mt-3 ${styles.card}`}>
               <div className={`card-body`}>

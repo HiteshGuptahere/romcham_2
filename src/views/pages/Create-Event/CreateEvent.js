@@ -35,7 +35,6 @@ const CreateEvent = () => {
           sample.push(response.data[i].user)
         }
         setAddmembersList(sample)
-        console.log(response.data)
       })
   }, [])
 
@@ -43,7 +42,6 @@ const CreateEvent = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(mobileNo, name, location, startTime, endTime, description, organize)
     try {
       axios
         .patch(
@@ -65,7 +63,6 @@ const CreateEvent = () => {
           },
         )
         .then((res) => {
-          console.log(res.data)
           alert('Asssigned sucessfully!')
         })
     } catch (error) {

@@ -38,7 +38,6 @@ const Login1 = () => {
       .post(process.env.REACT_APP_API_KEY + 'user/login', data)
       .then(function (response) {
         // handle success
-        console.log(response)
         history.push('/home')
       })
       .catch(function (error) {

@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-// import { logo } from 'src/assets/brand/logo'
+import Button from '@mui/material/Button'
 
 const EventList = () => {
   // http://134.209.222.109:3000/user/get-events-list
@@ -26,10 +26,7 @@ const EventList = () => {
         // for (let i = 0; i < response.data.length; i++) {
         //   sample.push(response.data[i].user)
         // }
-        console.log(response.data, 'data')
-        // console.log(response.data?.upcomingEvents, 'data')
         setPost(response.data.eventslist)
-        console.log(response.data.eventslist)
       })
       .catch((e) => {
         console.log(e)
@@ -44,15 +41,19 @@ const EventList = () => {
       <div>
         <div className="d-flex justify-content-between">
           <div className="">
-            <Link to="/page/past-events">
-              <button className={`btn ${styles.btnPast}`} style={{ margin: '0rem 1rem' }}>
+            <Link to="/page/past-events" style={{ textDecoration: 'none', marginRight: '1rem' }}>
+              <Button variant="outlined" size="medium">
                 past events
-              </button>
+              </Button>
+              {/* <button className={`btn ${styles.btnPast}`} style={{ margin: '0rem 1rem' }}></button> */}
             </Link>
-            <Link to="/page/upcomingevents">
-              <button className={`btn ${styles.btnUpcoming}`} style={{ width: '9.8rem' }}>
+            <Link to="/page/upcomingevents" style={{ textDecoration: 'none' }}>
+              {/* <button className={`btn ${styles.btnUpcoming}`} style={{ width: '9.8rem' }}>
                 upcoming events
-              </button>
+              </button> */}
+              <Button variant="outlined" size="medium">
+                upcoming events
+              </Button>
             </Link>
           </div>
           <div className="">
@@ -72,71 +73,69 @@ const EventList = () => {
           {Post && Post.length > 0 ? (
             Post.map((el) => {
               return (
-                <>
-                  <div className={`card mt-3 ${styles.card}`}>
-                    <div className={`card-body`}>
-                      <div className="d-flex justify-content-between mt-3">
-                        <div className="d-flex">
-                          <div>
-                            <img src={el.image ? el.image : 'NA'} alt="profile" width="70rem" />
-                          </div>
-
-                          <div style={{ padding: '0rem 2rem' }}>
-                            <h5 style={{ textTransform: 'capitalize', fontWeight: '500' }}>
-                              {' '}
-                              {el.name ? el.name : 'NA'}
-                            </h5>
-                            <p style={{ textTransform: 'capitalize', color: '#C2C2C2' }}>
-                              id: {el.id ? el.id : 'NA'}
-                            </p>
-                          </div>
-                        </div>
-
+                <div className={`card mt-3 ${styles.card}`} key={el.id.toString()}>
+                  <div className={`card-body`}>
+                    <div className="d-flex justify-content-between mt-3">
+                      <div className="d-flex">
                         <div>
-                          <FaArrowDown style={{ cursor: 'pointer' }} />
+                          <img src={el.image ? el.image : 'NA'} alt="profile" width="70rem" />
+                        </div>
+
+                        <div style={{ padding: '0rem 2rem' }}>
+                          <h5 style={{ textTransform: 'capitalize', fontWeight: '500' }}>
+                            {' '}
+                            {el.name ? el.name : 'NA'}
+                          </h5>
+                          <p style={{ textTransform: 'capitalize', color: '#C2C2C2' }}>
+                            id: {el.id ? el.id : 'NA'}
+                          </p>
                         </div>
                       </div>
-                      <div className="mt-4">
-                        <img src={Logo} className="img-fluid" alt="logo" />
+
+                      <div>
+                        <FaArrowDown style={{ cursor: 'pointer' }} />
                       </div>
-                      <div className="card mt-3 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-4">
-                        <div className="card-body">
-                          <div className="row">
-                            <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                              <div>
-                                <h6 className={`${styles.heading}`}>
-                                  {' '}
-                                  {el.startTime ? el.startTime : 'NA'}
-                                </h6>
-                              </div>
+                    </div>
+                    <div className="mt-4">
+                      <img src={Logo} className="img-fluid" alt="logo" />
+                    </div>
+                    <div className="card mt-3 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-4">
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div>
+                              <h6 className={`${styles.heading}`}>
+                                {' '}
+                                {el.startTime ? el.startTime : 'NA'}
+                              </h6>
                             </div>
+                          </div>
 
-                            <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                              <div className={`${styles.cardHead}`}>
-                                <h5 style={{ fontWeight: '600' }}>{el.name ? el.name : 'NA'}</h5>
-                                <p style={{ textTransform: 'capitalize', fontWeight: 'normal' }}>
-                                  1 going - 0 intersted
-                                </p>
-                              </div>
+                          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div className={`${styles.cardHead}`}>
+                              <h5 style={{ fontWeight: '600' }}>{el.name ? el.name : 'NA'}</h5>
+                              <p style={{ textTransform: 'capitalize', fontWeight: 'normal' }}>
+                                1 going - 0 intersted
+                              </p>
                             </div>
+                          </div>
 
-                            <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                              <div className="text-right">
-                                <Link
-                                  className={`btn ${styles.btn}`}
-                                  style={{ width: '9.8rem' }}
-                                  to="/page/upcoming-events"
-                                >
-                                  view details
-                                </Link>
-                              </div>
+                          <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div className="text-right">
+                              <Link
+                                className={`btn ${styles.btn}`}
+                                style={{ width: '9.8rem' }}
+                                to="/page/upcoming-events"
+                              >
+                                view details
+                              </Link>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               )
             })
           ) : (

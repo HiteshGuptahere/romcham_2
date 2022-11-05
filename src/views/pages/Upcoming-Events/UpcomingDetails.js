@@ -16,8 +16,6 @@ const EventDetails = () => {
   //   }, [])
 
   //   if (!post) return null
-  //   console.log(post)
-  //   console.log(post?.pastEvents)
 
   // const handleChange = (value) => {
   //   setPost(value)
@@ -35,10 +33,7 @@ const EventDetails = () => {
         // for (let i = 0; i < response.data.length; i++) {
         //   sample.push(response.data[i].user)
         // }
-        console.log(response.data, 'data')
-        // console.log(response.data?.upcomingEvents, 'data')
         setPost(response.data.userlist)
-        console.log(response.data.userlist)
       })
       .catch((e) => {
         console.log(e)

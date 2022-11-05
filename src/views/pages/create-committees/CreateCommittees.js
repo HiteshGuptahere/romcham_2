@@ -25,10 +25,7 @@ const Login1 = () => {
         // for (let i = 0; i < response.data.length; i++) {
         //   sample.push(response.data[i].user)
         // }
-        console.log(response.data, 'data')
-        // console.log(response.data?.upcomingEvents, 'data')
         setPost(response.data.committee)
-        console.log(response.data.committee, 'datacomitee')
       })
       .catch((e) => {
         console.log(e)
