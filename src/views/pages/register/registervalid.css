@@ -1,0 +1,13 @@
+#areabusiness {
+  height: 54px;
+  width: 175%;
+}
+
+@media only screen and (max-width: 600px) {
+  #areabusiness {
+    width: 100% !important;
+  }
+  .radiobutton {
+    display: block !important;
+  }
+}

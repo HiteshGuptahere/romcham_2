@@ -1,0 +1,48 @@
+/* footer */
+
+.footerDesign {
+
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0rem;
+    
+}
+
+
+.footerDesign h6 {
+
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 300;
+    text-transform: capitalize;
+   
+}
+
+.footerDesign a {
+
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    text-transform: capitalize;
+    padding: 0rem 1rem;
+    font-size: 0.8rem;
+}
+
+.footerDesign label {
+
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 300;
+    text-transform: capitalize;
+   
+}
+
+
+@media only screen and (min-width: 280px) and (max-width : 480px) {
+
+    .footerDesign {
+
+        display: block;
+        text-align: center;
+    }
+}

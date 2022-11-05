@@ -1,0 +1,40 @@
+b{
+    color: #C5C7CD;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    margin-left: 40px;
+ 
+}
+.tables{
+height: 20px;
+/* font-family: 'Montserrat'; */
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0.2px;
+color: #9FA2B4;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-left: 50px;
+}
+h6{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.2px;
+color: #252733;
+margin-left: 40px;
+white-space: nowrap;
+}
+.trash{
+    text-align: right;
+margin-left: -80px;
+
+}
