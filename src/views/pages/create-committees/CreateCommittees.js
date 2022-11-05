@@ -137,7 +137,7 @@ const Login1 = () => {
           </div>
         </div>
       </div>
-      <div className="row" style={{ marginTop: '8rem', position: 'relative' }}>
+      <div className="row" style={{ marginTop: '40rem', position: 'relative' }}>
         <div>
           <img src={pic9} alt="pic7" className={`w-100 ${styles.greenBanner}`} />
         </div>
