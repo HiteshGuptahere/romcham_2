@@ -1,10 +1,10 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "Rocham",
   "version": "4.4.0",
-  "description": "CoreUI Free React Admin Template",
+  "description": "Rocham",
   "homepage": ".",
   "bugs": {
-    "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
+    "url": "https://github.com/rocham"
   },
   "repository": {
     "type": "git",

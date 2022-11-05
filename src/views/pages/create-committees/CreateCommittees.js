@@ -8,6 +8,14 @@ import Footer from '../footer/Footer'
 import { TbAlertCircle } from 'react-icons/tb'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import Divider from '@mui/material/Divider'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import Avatar from '@mui/material/Avatar'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 
 const Login1 = () => {
   // http://134.209.222.109:3000/user/get-committee-list
@@ -47,42 +55,89 @@ const Login1 = () => {
             <img src={pic9} alt="pic7" className={`w-100 ${styles.orangeBanner}`} />
             <img src={pic8} alt="pic8" className={`${styles.whiteBanner}`} />
 
-            <div className={`card ${styles.loginCard}`}>
-              <div className={`card-body`}>
-                <div className={`${styles.loginHead}`}>
-                  <h5>committees</h5>
-                  <p className={`${styles.cardText}`}>
-                    You are already a member of these
-                    <br /> Rochamp Committee
-                  </p>
-                  <br />
-                  {post && post.length > 0
-                    ? post.map((item, index) => (
-                        <div key={index} className={`${styles.sectionCommitee}`}>
-                          <ul>
-                            <li>
-                              <Link
-                                className="nav-link"
-                                aria-current="page"
-                                to={`/newcommittees/${item.id}`}
-                              >
-                                <span>
-                                  <TbAlertCircle />
-                                </span>
-                                {item.committee_name ? item.committee_name : 'NA'}
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      ))
-                    : ''}
+            <div className="row mb-3">
+              <div className="col-3"></div>
+              <div className="col-6">
+                <div className={`card mb-3`}>
+                  <div className={`card-body`}>
+                    <div className={`text-center`}>
+                      <h5>Committees</h5>
+                      <p>
+                        You are already a member of these
+                        <br /> Rochamp Committee
+                      </p>
+                      <br />
+
+                      <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                        {post && post.length > 0
+                          ? post.map((item, index) => (
+                              <ListItem alignItems="flex-start" key={index}>
+                                <ListItemAvatar>
+                                  <Avatar alt="Loading..." src={item.image} />
+                                </ListItemAvatar>
+                                <ListItemText
+                                  primary={item.committee_name ? item.committee_name : 'NA'}
+                                  secondary={
+                                    <React.Fragment>
+                                      <Typography
+                                        sx={{ display: 'inline' }}
+                                        component="span"
+                                        variant="body2"
+                                        color="text.primary"
+                                      >
+                                        {item.email ? item.email : 'NA'}
+                                      </Typography>
+                                      {item.description ? item.description : 'Lorem Ipsum'}
+                                    </React.Fragment>
+                                  }
+                                />
+                                <div className="row">
+                                  <div className="col">
+                                    <Link
+                                      className="nav-link"
+                                      aria-current="page"
+                                      to={`/newcommittees/${item.id}`}
+                                    >
+                                      <Button variant="text" className="text-capitalize">
+                                        details
+                                      </Button>
+                                    </Link>
+                                  </div>
+                                </div>
+                              </ListItem>
+                            ))
+                          : null}
+                      </List>
+                      {/* {post && post.length > 0
+                        ? post.map((item, index) => (
+                            <div key={index} className={`${styles.sectionCommitee}`}>
+                              <ul>
+                                <li>
+                                  <Link
+                                    className="nav-link"
+                                    aria-current="page"
+                                    to={`/newcommittees/${item.id}`}
+                                  >
+                                    <span>
+                                      <TbAlertCircle />
+                                    </span>
+                                    {item.committee_name ? item.committee_name : 'NA'}
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          ))
+                        : ''} */}
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div className="col-3"></div>
             </div>
           </div>
         </div>
       </div>
-      <div style={{ position: 'relative' }}>
+      <div className="row" style={{ marginTop: '8rem', position: 'relative' }}>
         <div>
           <img src={pic9} alt="pic7" className={`w-100 ${styles.greenBanner}`} />
         </div>
