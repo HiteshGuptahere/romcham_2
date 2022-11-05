@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 import { FaFilter, FaPlus, FaUpload, FaPenSquare } from 'react-icons/fa'
 import styles from './styles.module.css'
-import { Link } from 'react-router-dom'
+import { Link, Router } from 'react-router-dom'
 
 const PastEvents = () => {
   const [file, setFile] = useState([])
@@ -38,6 +38,10 @@ const PastEvents = () => {
     setPost(value)
   }
 
+  const handleRouteToEditPage = (item, index) => {
+    console.log('edit')
+  }
+
   useEffect(() => {
     axios
       .get('http://134.209.222.109:3000/user/get-pastevents-list', {
@@ -59,42 +63,29 @@ const PastEvents = () => {
   return (
     <>
       <div>
-        <div className="text-right"></div>
-        <div className={`card mt-3 ${styles.card}`}>
-          <div className={`card-body`} style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div>
-              <h5
-                className={`form-label ${styles.eventLabel}`}
-                style={{ color: 'black', fontWeight: '500' }}
-              >
-                Event Details
-              </h5>
-            </div>
-            <div>
-              <img src={file} />
-              <FaUpload />
-              <input type="file" required="required" onChange={handleFile} />
-            </div>
-          </div>
+        <div>
+          <h5
+            className={`form-label ${styles.eventLabel}`}
+            style={{ color: 'black', fontWeight: '500' }}
+          >
+            Event Details
+          </h5>
         </div>
+
         {post?.map((item, index) => {
           console.log(item, 'data123')
           return (
             <div key={index} className={`card mt-3 ${styles.card}`}>
               <div className={`card-body`}>
-                <div>
-                  <h5
-                    className={`form-label ${styles.eventLabel}`}
-                    style={{ color: 'black', fontWeight: '500' }}
-                  >
-                    event deatils
-                  </h5>
-                </div>
-                <div style={{ float: 'right' }}>
-                  <Link to="/page/editevent">
-                    {' '}
-                    <FaPenSquare />
-                  </Link>
+                <div className="row">
+                  <div className="col"></div>
+                  <div className="col text-end">
+                    <Link to={`/page/editevent/${item.id}`} style={{ textDecoration: 'none' }}>
+                      <Button variant="contained" size="small">
+                        Edit
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="mt-3 row">
@@ -102,9 +93,7 @@ const PastEvents = () => {
                     event name
                   </label>
                   <div className="col-sm-8">
-                    <label className={`col-sm-4 col-form-label ${styles.eventLabel}`}>
-                      {item.name}
-                    </label>
+                    <label className={`col-sm-4 col-form-label`}>{item.name}</label>
                   </div>
                 </div>
                 <div className="mb-3 row">
@@ -125,11 +114,11 @@ const PastEvents = () => {
                               className="form-control"
                               style={{ border: 'none', background: 'none' }}
                             />
-                          )}{' '}
+                          )}
                         </div>
                       </div>
 
-                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         <div>
                           {item.startTimeInEpoch ? (
                             item.startTimeInEpoch
@@ -141,7 +130,7 @@ const PastEvents = () => {
                             />
                           )}{' '}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -163,7 +152,7 @@ const PastEvents = () => {
                         )}{' '}
                       </div>
 
-                      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                      {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                         {item.endTimeInEpoch ? (
                           item.endTimeInEpoch
                         ) : (
@@ -173,7 +162,7 @@ const PastEvents = () => {
                             style={{ border: 'none', background: 'none' }}
                           />
                         )}{' '}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -182,9 +171,7 @@ const PastEvents = () => {
                     event description
                   </label>
                   <div className="col-sm-8">
-                    <label className={`col-sm-12 col-form-label ${styles.eventLabel}`}>
-                      {item.description}
-                    </label>
+                    <label className={`col-sm-12 col-form-label`}>{item.description}</label>
                   </div>
                 </div>
                 <div>

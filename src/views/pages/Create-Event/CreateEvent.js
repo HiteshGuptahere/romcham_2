@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'
 import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 
 const CreateEvent = () => {
   const [addmembersList, setAddmembersList] = useState([])

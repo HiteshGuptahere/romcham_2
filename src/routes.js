@@ -39,7 +39,7 @@ const routes = [
   { path: '/page/settings/registration', name: 'Registration', element: Registration },
   { path: '/page/settings/members', name: 'Members', element: Members },
   { path: '/page/settings/groups', name: 'Groups', element: Groups },
-  { path: '/page/editevent', name: 'Editevent', element: Editevent },
+  { path: '/page/editevent/:id', name: 'Editevent', element: Editevent },
   // { path: '**', pathMatch: 'full', component: page404 },
 ]
 

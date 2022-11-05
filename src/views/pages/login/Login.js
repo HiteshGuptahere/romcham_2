@@ -7,7 +7,7 @@ import pic9 from './assets/pic9.png'
 import NavBar from '../../../components/NavBar'
 import Footer from '../footer/Footer'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 import axios from 'axios'
 import { createBrowserHistory } from 'history'
 

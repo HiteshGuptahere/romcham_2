@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'
 import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 
 const EditEvent = () => {
   const [addmembersList, setAddmembersList] = useState([])
@@ -35,7 +35,6 @@ const EditEvent = () => {
           sample.push(response.data[i].user)
         }
         setAddmembersList(sample)
-        console.log(response.data)
       })
   }, [])
 
@@ -43,7 +42,6 @@ const EditEvent = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    console.log(mobileNo, name, location, startTime, endTime, description, organize)
     try {
       axios
         .patch(
@@ -65,7 +63,6 @@ const EditEvent = () => {
           },
         )
         .then((res) => {
-          console.log(res.data)
           alert('Asssigned sucessfully!')
         })
     } catch (error) {
@@ -85,7 +82,7 @@ const EditEvent = () => {
           >
             Edit event
           </h5>
-          <label className={`${styles.eventLabel}`}>Add Members</label>
+          <label>Add Members</label>
           <Select
             isMulti={true}
             className="form-control"
@@ -99,11 +96,11 @@ const EditEvent = () => {
           <div className="row mt-5">
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div>
-                <label className={`form-label ${styles.eventLabel}`}>event name</label>
+                <label className={`form-label`}>Event name</label>
 
                 <input
                   type="text"
-                  className={`form-control ${styles.eventInput}`}
+                  className={`form-control`}
                   placeholder="Event Name"
                   onChange={(e) => {
                     setName(e.target.value)
@@ -112,19 +109,22 @@ const EditEvent = () => {
                 />
               </div>
               <div className="row mt-3">
-                <label className={`form-label ${styles.eventLabel}`}>start</label>
-
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                  <div>
-                    <input
-                      type="date"
-                      className={`form-control mt-1 ${styles.eventInput}`}
-                      placeholder="Event Name"
-                      onChange={(e) => {
-                        setStartTime(e.target.value)
-                      }}
-                      value={startTime}
-                    />
+                <div className="col">
+                  <div className="row w-100">
+                    <div className="col-3 mt-2">
+                      <label className={`form-label`}>Start :</label>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="date"
+                        className={`form-control mt-1 ${styles.eventInput}`}
+                        placeholder="Event Name"
+                        onChange={(e) => {
+                          setStartTime(e.target.value)
+                        }}
+                        value={startTime}
+                      />
+                    </div>
                   </div>
                 </div>
                 {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -140,7 +140,7 @@ const EditEvent = () => {
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div>
-                <label className={`form-label ${styles.eventLabel}`}>location</label>
+                <label className={`form-label`}>Location</label>
 
                 <input
                   type="text"
@@ -154,19 +154,22 @@ const EditEvent = () => {
               </div>
 
               <div className="row mt-3">
-                <label className={`form-label ${styles.eventLabel}`}>end</label>
-
-                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                  <div>
-                    <input
-                      type="date"
-                      className={`form-control mt-1 ${styles.eventInput}`}
-                      placeholder="Event Name"
-                      onChange={(e) => {
-                        setEndTime(e.target.value)
-                      }}
-                      value={endTime}
-                    />
+                <div className="col">
+                  <div className="row w-100">
+                    <div className="col-3 mt-2">
+                      <label className={`form-label`}>End : </label>
+                    </div>
+                    <div className="col">
+                      <input
+                        type="date"
+                        className={`form-control mt-1 ${styles.eventInput}`}
+                        placeholder="Event Name"
+                        onChange={(e) => {
+                          setEndTime(e.target.value)
+                        }}
+                        value={endTime}
+                      />
+                    </div>
                   </div>
                 </div>
                 {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -196,7 +199,7 @@ const EditEvent = () => {
           </div>
 
           <div className="row mt-5">
-            <label className={`form-label ${styles.eventLabel}`}>organizer deatils</label>
+            <label className={`form-label`}>Organizer Deatils</label>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div>
                 <input
@@ -215,11 +218,8 @@ const EditEvent = () => {
                   <input className={`form-check-input ${styles.eventRadio}`} type="checkbox" />
                 </div>
                 <div>
-                  <label
-                    className={`form-label ${styles.eventLabel}`}
-                    style={{ color: 'black', fontWeight: '500' }}
-                  >
-                    capture attendance
+                  <label className={`form-label`} style={{ color: 'black', fontWeight: '500' }}>
+                    Capture attendance
                   </label>
                 </div>
               </div>
@@ -257,13 +257,19 @@ const EditEvent = () => {
               </div>
             </div>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            {/* <Link className={`btn ${styles.btn}`} to="">
-              save & preview
-            </Link> */}
-            <Button onClick={onSubmit} className={`btn ${styles.btn}`}>
-              save & preview
-            </Button>
+          <div className="row">
+            <div className="col">
+              <Link to="/page/editevent/" style={{ textDecoration: 'none' }}>
+                <Button variant="contained" size="small">
+                  Edit
+                </Button>
+              </Link>
+            </div>
+            <div className="col text-end">
+              <Button variant="contained" onClick={onSubmit} size="small">
+                save & preview
+              </Button>
+            </div>
           </div>
         </div>
       </div>

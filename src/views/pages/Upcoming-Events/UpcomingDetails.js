@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import Button from '@mui/material/Button'
 import { FaFilter, FaPlus, FaImages } from 'react-icons/fa'
 import Logo from '../../../assets/img/rectangle.png'
 import styles from './styles.module.css'
